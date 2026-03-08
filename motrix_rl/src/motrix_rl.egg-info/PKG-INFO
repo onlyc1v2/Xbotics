@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: motrix-rl
+Version: 0.0.2
+Summary: Reinforcement learning training framework based on SKRL with multi-backend unified training interface.
+Author-email: Motphys <developers@motphys.com>
+License: Apache-2.0
+Requires-Python: ==3.10.*
+Description-Content-Type: text/markdown
+Requires-Dist: gymnasium===1.1.1
+Requires-Dist: python-abc>=0.2.0
+Requires-Dist: motrix-envs
+Provides-Extra: skrl-jax
+Requires-Dist: skrl===1.4.3; sys_platform == "linux" and extra == "skrl-jax"
+Requires-Dist: jax[cuda12]==0.4.34; sys_platform == "linux" and extra == "skrl-jax"
+Requires-Dist: flax===0.10.4; sys_platform == "linux" and extra == "skrl-jax"
+Requires-Dist: tensorflow===2.20.0; sys_platform == "linux" and extra == "skrl-jax"
+Provides-Extra: skrl-torch
+Requires-Dist: skrl===1.4.3; extra == "skrl-torch"
+Requires-Dist: torch===2.7.0+cu128; extra == "skrl-torch"
+Requires-Dist: torchvision===v0.22.0+cu128; extra == "skrl-torch"
+Requires-Dist: torchaudio===2.7.0+cu128; extra == "skrl-torch"
+Provides-Extra: test
+Requires-Dist: pytest~=8.3.3; extra == "test"
+
+# MotrixLab
+
+集成 rl 框架，并针对 motrix_envs 里的各种环境提供默认的训练参数。 预期会支持不同的 rl 框架的不同 rl 算法，但目前只支持 了 skrl 框架的 ppo 算法

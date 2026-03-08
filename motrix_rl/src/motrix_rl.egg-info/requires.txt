@@ -1,0 +1,20 @@
+gymnasium===1.1.1
+python-abc>=0.2.0
+motrix-envs
+
+[skrl-jax]
+
+[skrl-jax:sys_platform == "linux"]
+skrl===1.4.3
+jax[cuda12]==0.4.34
+flax===0.10.4
+tensorflow===2.20.0
+
+[skrl-torch]
+skrl===1.4.3
+torch===2.7.0+cu128
+torchvision===v0.22.0+cu128
+torchaudio===2.7.0+cu128
+
+[test]
+pytest~=8.3.3
