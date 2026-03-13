@@ -1,0 +1,24 @@
+<mujoco model="anymal_c rough terrain scene">
+  <include file="anymal_c.xml"/>
+  <include file="materials.xml"/>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="120" elevation="-20"/>
+  </visual>
+
+  <statistic center="0 0 .3" extent="1.2"/>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <!-- 复杂地形高度图：请将 heightmap.png 放在本目录下的 assets/ 中 -->
+    <hfield name="hfield" file="assets/heightmap.png" size="20 20 2.5 0.1"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
+    <geom name="ground" pos="0 0 0" type="hfield" hfield="hfield" material="motphys-ground"
+      contype="1" conaffinity="1" friction="0.6"/>
+  </worldbody>
+</mujoco>
